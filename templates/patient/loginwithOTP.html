@@ -1,0 +1,20 @@
+{% extends 'basic.html' %}
+{% block head %}
+<title>Login with OTP</title>
+{% endblock %}
+{% block body %}
+<h2 style="color: white; align-content: center;">Enter the OTP sent to your registered email ID</h2><br>
+
+<form class="OTP-form-btn" method="POST" action="/accounts/OTP" style="position: relative;
+z-index: 1;
+background: #FFFFFF;
+max-width: 360px;
+margin: 50px auto 100px;
+padding: 45px;
+text-align: center;
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);">
+    {% csrf_token %}
+    Enter OTP: <input type="text" name="OTP"><br>
+    <button type="submit" style="margin-top: 10px;">Submit OTP</button>
+</form>
+{% endblock %}
